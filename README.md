@@ -46,43 +46,96 @@ This type of counter is normally referred to as a Down Counter, (CTD). In a bina
 
 4-bit Count Down Counter
 ### Procedure
-/* write all the steps invloved */
+1.Create a new project in QuartusII software.
 
+2.Name the project as uc for upcounter and dc for down counter.
 
+3.Create a new verilog hdl file in the project file.
+
+4.Name the module as dc and uc for down counter and up counter.
+
+5.Within the module declare input and output variables.
+
+6.Create a loop using if-else with condition parameter as reset value.
+
+7.End the loop.
+
+8.End the module.
 
 ### PROGRAM 
-/*
+```
 Program for flipflops  and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
-*/
-
-
-
+Developed by: ALFRED A B
+RegisterNumber:  212222110002
+```
+### UP COUNTER:
+```
+module exp6(clk,A);
+input clk;
+output reg [3:0]A;
+always @(posedge clk)
+begin
+	A[3]=(((A[0])&(A[1])&(A[2]))^A[3]);
+	A[2]=(((A[0])&(A[1]))^A[2]);
+	A[1]=(A[0])^A[1];
+	A[0]=A[0]^1;
+end
+endmodule
+```
+### DOWM COUNTER
+```
+module exp6(clk,A);
+input clk;
+output reg [3:0]A;
+always@(posedge clk)
+begin
+	A[3]=(((~A[0])&(~A[1])&(~A[2]))^A[3]);
+	A[2]=(((~A[0])&(~A[1]))^A[2]);
+	A[1]=(~A[0])^A[1];
+	A[0]=1^A[0];
+end
+endmodule
+```
 
 
 
 ### RTL LOGIC UP COUNTER AND DOWN COUNTER  
+  ### UP COUNTER:
+  ![image](https://github.com/Alfredsec/Exp-6-Synchornous-counters-/assets/120621608/3bb232e4-5e20-42e1-994c-127951a0fc4e)
 
 
 
 
 
+### DOWN COUNTER :
+![image](https://github.com/Alfredsec/Exp-6-Synchornous-counters-/assets/120621608/45a14c6c-57e6-479f-9287-91b0bed0485f)
 
 
 
 
 ### TIMING DIGRAMS FOR COUNTER  
 
+### UP COUNTER:
+![image](https://github.com/Alfredsec/Exp-6-Synchornous-counters-/assets/120621608/9e980005-dbe2-477b-a13a-9b581b1925ab)
+
+### DOWN COUNTER:
+![image](https://github.com/Alfredsec/Exp-6-Synchornous-counters-/assets/120621608/096f3659-8b53-41bb-ad92-2e7137f2832a)
 
 
 
 
 ### TRUTH TABLE 
 
+### UP COUNTER:
+![image](https://github.com/Alfredsec/Exp-6-Synchornous-counters-/assets/120621608/170bf688-4aad-4db9-91dd-691b173badf4)
+
+### DOWN COUNTER :
+
+![image](https://github.com/Alfredsec/Exp-6-Synchornous-counters-/assets/120621608/4b1c9fd3-35ba-4923-b517-da4fe2bb8755)
 
 
 
 
 
-### RESULTS 
+### RESULTS :
+Thus Synchornous counters up counter and down counter circuit are studied and the truth table for different logic gates are verified.
